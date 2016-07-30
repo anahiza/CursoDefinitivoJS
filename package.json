@@ -1,0 +1,28 @@
+{
+  "name": "platzigram",
+  "version": "0.1.0",
+  "description": "Comparte tus fotos estudiando en Platzi con el resto e la comunidad",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodejs": "^0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anahiza/CursoDefinitivoJS.git"
+  },
+  "keywords": [
+    "platzi",
+    "javascript"
+  ],
+  "author": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anahiza/CursoDefinitivoJS/issues"
+  },
+  "homepage": "https://github.com/anahiza/CursoDefinitivoJS#readme"
+}
