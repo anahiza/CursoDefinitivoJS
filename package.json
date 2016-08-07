@@ -6,12 +6,11 @@
   "dependencies": {
     "express": "^4.14.0",
     "materialize-css": "^0.97.7",
-    "nodejs": "^0.0.0",
     "pug": "^2.0.0-beta4"
   },
   "devDependencies": {
-    "gulp-rename": "^1.2.2",
     "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2"
   },
   "scripts": {
@@ -22,8 +21,10 @@
     "url": "git+https://github.com/anahiza/CursoDefinitivoJS.git"
   },
   "keywords": [
-    "platzi",
-    "javascript"
+   "platzi",
+    "javascript",
+    "curso-definitivo",
+    "platzigram"
   ],
   "author": "MIT",
   "license": "ISC",

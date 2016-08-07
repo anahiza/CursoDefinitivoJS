@@ -5,9 +5,9 @@ app.set('view engine','pug');
 app.use(express.static('public'));
 app.get('/',function(req, res){
 	res.render('index');
-});
+})
 
 app.listen(3000,function(err){
-	if (err) return console.log('Hubo un error'), procees.exit(1);
+	if (err) return console.log('Hubo un error'), process.exit(1);
 	console.log('Platzigram escuchando en el puerto 3000');
-});
+})
