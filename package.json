@@ -9,9 +9,12 @@
     "pug": "^2.0.0-beta4"
   },
   "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +24,7 @@
     "url": "git+https://github.com/anahiza/CursoDefinitivoJS.git"
   },
   "keywords": [
-   "platzi",
+    "platzi",
     "javascript",
     "curso-definitivo",
     "platzigram"
