@@ -15,10 +15,12 @@
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anahiza/CursoDefinitivoJS/issues"
+  },
+  "scripts":{
+    "buil":"gulp",
+    "start":"gulp watch & node server.js"
   },
   "homepage": "https://github.com/anahiza/CursoDefinitivoJS#readme"
 }

@@ -1164,7 +1164,7 @@ page('/', function (ctx, next) {
 });
 
 page('/signup', function (ctx, next) {
-	main.innerHTML = "Sing up<a href='/'>Home </a>";
+	main.innerHTML = "<a href='/'>Home </a>Sing Up";
 });
 
 page.start();
