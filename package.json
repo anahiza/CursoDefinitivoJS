@@ -4,10 +4,12 @@
   "description": "Comparte tus fotos estudiando en Platzi con el resto e la comunidad",
   "main": "server.js",
   "dependencies": {
+    "empty-element": "^1.0.0",
     "express": "^4.14.0",
     "materialize-css": "^0.97.7",
     "page": "^1.7.1",
-    "pug": "^2.0.0-beta4"
+    "pug": "^2.0.0-beta4",
+    "yo-yo": "^1.2.2"
   },
   "devDependencies": {
     "babelify": "^7.3.0",
@@ -20,7 +22,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "node server.js"
+    "start": "gulp watch & node server.js"
   },
   "repository": {
     "type": "git",
@@ -36,10 +38,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anahiza/CursoDefinitivoJS/issues"
-  },
-  "scripts":{
-    "buil":"gulp",
-    "start":"gulp watch & node server.js"
   },
   "homepage": "https://github.com/anahiza/CursoDefinitivoJS#readme"
 }
