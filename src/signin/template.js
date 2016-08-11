@@ -17,7 +17,7 @@ var signinForm= yo`<div class="col s12 m7">
                       <input type="text" name="name" placeholder="Nombre completo"/>
                       <input type="text" name="username" placeholder="Nombre de usuario"/>
                       <input type="password" name="password" placeholder="Contraseña"/>
-                      <button class="btn waves-effect waves-light btn-signup" type="submit">Inicia Sesión</button>
+                      <button class="btn waves-effect waves-light btn-signup" type="submit"><i class="fa fa-frown-o" aria-hidden="true"></i>Inicia Sesión</button>
                     </div>
                   </form>
                 </div>
