@@ -1,8 +1,23 @@
 var yo=require('yo-yo') ;
+//Para compatibilidad con SAFARI
+// if (!window.Intl){
+//   window.Intl=require('intl');
+//   require('intl/locale-data/jsonp/en-US.js');
+//   require('intl/locale-data/jsonp/es-AR.js');
+  
+// }
+
+var IntlRelativeFormat = window.IntlRelativeFormat=require('intl-relativeformat');
+
+require('intl-relativeformat/dist/locale-data/en.js');
+require('intl-relativeformat/dist/locale-data/es.js');
+
+var rf = new IntlRelativeFormat('es-AR');
 
 
 module.exports=function pictureCard(pic){
   var el;
+
   function render(picture){
     return yo`<div class="card ${picture.liked ? 'liked':''}">
         <div class="card-image waves-effect waves-block waves-light">
@@ -11,10 +26,9 @@ module.exports=function pictureCard(pic){
         <div class="card-content">
           <a href="user/${picture.user.username}" class="card-title">
             <img src="${picture.user.avatar}" class="avatar" />
-            <span class="username">${picture.user.username}</span>       
-
+            <span class="username">${picture.user.username}</span>  
           </a>
-          <small class="right time">Hace 1 día</small>
+          <small class="right time">${rf.format(picture.createdAt)}</small>
           <p>
             <a class="left" href="#" onclick=${like.bind(null,true)}><i class="fa fa-heart-o" aria-hidden="true"></i></a>
             <a class="left" href="#" onclick=${like.bind(null,false)}><i class="fa fa-heart" aria-hidden="true"></i></a>
@@ -22,7 +36,6 @@ module.exports=function pictureCard(pic){
           </p>
         </div>
       </div>`;
-
   }
 
   function like(liked){
@@ -34,6 +47,5 @@ module.exports=function pictureCard(pic){
   }
 
   el=render(pic);
-  return el;
-  
+  return el;  
 }
