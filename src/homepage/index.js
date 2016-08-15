@@ -13,7 +13,7 @@ page('/', function(ctx,next){
 				avatar:'https://lh3.googleusercontent.com/-vHUbokKYy8E/AAAAAAAAAAI/AAAAAAAACIo/xcEEOpJnzfI/s60-p-rw-no/photo.jpg'
 			},
 			url:'https://image.freepik.com/free-photo/wooden-table-with-blurred-background_1134-14.jpg',
-			likes:10,
+			likes:0,
 			liked: false,
 			createdAt: new Date()
 
