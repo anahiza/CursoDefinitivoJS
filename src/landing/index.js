@@ -13,4 +13,4 @@ module.exports=function(box){
         </div>
       </div>
     </div>`
-}
+};

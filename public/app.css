@@ -6395,8 +6395,8 @@ body {
   color: #125688;
   font-family: Montserrat; }
 
-#main-container {
-  margin: 0 auto; }
+.landing {
+  margin: 30px auto; }
 
 .iphone {
   max-width: 100%; }
@@ -6413,7 +6413,6 @@ body {
   padding: 10px 0;
   text-align: center; }
 
-.signup-box,
 .platzigram {
   font-family: 'Oleo Script';
   font-size: 42px;
@@ -6421,8 +6420,7 @@ body {
 
 .signup-form {
   width: 65%;
-  margin: 0 auto;
-  font-family: Montserrat; }
+  margin: 0 auto; }
 
 .signup-form h2 {
   color: #a5a7aa;
@@ -6447,14 +6445,15 @@ body {
 .timeline {
   padding: 30px 0; }
 
-.landing {
-  margin: 30px; }
-
 .avatar {
-  max-width: 48px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   float: left;
   margin-right: 12px; }
+
+.card .username {
+  color: #125688; }
 
 .card small.time {
   line-height: 48px; }
@@ -6470,9 +6469,6 @@ body {
   font-size: 30px; }
 
 .card .fa-heart-o {
-  color: #125688; }
-
-.card .username {
   color: #125688; }
 
 .card .fa-heart {

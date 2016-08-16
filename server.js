@@ -13,7 +13,7 @@ app.get('/signup',function(req, res){
     res.render('index', {title: 'Platzigram - Sign Up'});
 })
 
-app.get('/singin',function(req, res){
+app.get('/signin',function(req, res){
     res.render('index', {title: 'Platzigram - Sign In'});
 })
 

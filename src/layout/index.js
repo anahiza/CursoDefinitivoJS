@@ -1,6 +1,7 @@
 var yo= require('yo-yo');
 var landing = require('../landing');
 var empty= require('empty-element');
+var translate=require('../translate');
 
 module.exports=function(content){
   return yo`<div>
@@ -16,7 +17,7 @@ module.exports=function(content){
             <i class="fa fa-user" aria-hidden="true"></i>
           </a>
           <ul id="drop-user" class="dropdown-content">
-            <li>Salir</li>
+            <li>${translate.message('logout')}/li>
           </ul>
          </div>
         </div>
