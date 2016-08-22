@@ -60,7 +60,7 @@ app.get('/api/pictures', function(req,res){
 	];
 	setTimeout(function(){
 		res.send(pictures);
-	}, 2000);	
+	}, 1000);	
 })
 app.post('/api/pictures', function(req,res){
     upload(req,res, function(err){
@@ -70,6 +70,10 @@ app.post('/api/pictures', function(req,res){
         res.sed("File uploaded");
         
     })
+})
+
+app.get('/user',function(req, res){
+	res.render('index');
 })
 
 app.listen(3000,function(err){

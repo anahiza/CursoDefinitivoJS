@@ -5,4 +5,5 @@ require('./homepage');
 require('./signup');
 require('./signin');
 require('./footer');
+require('./user');
 page();
