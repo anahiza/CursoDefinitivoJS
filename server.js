@@ -58,10 +58,10 @@ app.get('/api/pictures', function(req,res){
 		}
 
 	];
-	setTimeout(function(){
-		res.send(pictures);
-	}, 1000);	
+	
+	res.send(pictures);
 })
+
 app.post('/api/pictures', function(req,res){
     upload(req,res, function(err){
         if (err){
@@ -72,8 +72,54 @@ app.post('/api/pictures', function(req,res){
     })
 })
 
-app.get('/user',function(req, res){
-	res.render('index');
+app.get('/api/user/:username',function(req,res){
+	var user=[
+		{
+			username: 'Anahi',
+			avatar: 'https://pbs.twimg.com/profile_images/308830576/hand_400x400.jpg',
+			pictures: [
+				{
+					id:1,
+					src:'https://image.freepik.com/foto-gratis/trabajando-desde-la-cama_385-19324222.jpg',
+					likes:3
+				},
+				{
+					id:2,
+					src:'https://image.freepik.com/vector-gratis/programador-en-el-ordenador_23-2147505689.jpg',
+					likes:32
+				},
+				{
+					id:3,
+					src:'https://image.freepik.com/vector-gratis/areas-de-trabajo-en-e-business_23-2147499433.jpg',
+					likes:34
+				},
+				{
+					id:4,
+					src:'https://image.freepik.com/foto-gratis/trabajando-en-una-tableta_1112-167.jpg',
+					likes:6
+				},
+				{
+					id:5,
+					src:'https://image.freepik.com/foto-gratis/trabajando-en-una-tableta_1112-167.jpg',
+					likes:5
+				},
+				{
+					id:6,
+					src:'https://image.freepik.com/foto-gratis/trabajando-en-una-tableta_1112-167.jpg',
+					likes:0
+				}
+			],
+			follow: 2,
+			followers:30
+		}
+	]
+	res.send(user);
+	
+})
+
+
+app.get('/:username',function(req,res){
+	res.render('index', {title:`Platzigram - ${req.params.username}`});
 })
 
 app.listen(3000,function(err){
