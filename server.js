@@ -73,7 +73,7 @@ app.post('/api/pictures', function(req,res){
 })
 
 app.get('/api/user/:username',function(req,res){
-	var user=[
+	var user=
 		{
 			username: 'Anahi',
 			avatar: 'https://pbs.twimg.com/profile_images/308830576/hand_400x400.jpg',
@@ -105,16 +105,12 @@ app.get('/api/user/:username',function(req,res){
 				},
 				{
 					id:6,
-					src:'https://image.freepik.com/foto-gratis/trabajando-en-una-tableta_1112-167.jpg',
+					src:'https://igcdn-photos-a-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/e35/12904985_475045592684864_301128546_n.jpg?ig_cache_key=MTIyMzQwNjg2NDA5NDE2MDM5NA%3D%3D.2',
 					likes:0
 				}
-			],
-			follow: 2,
-			followers:30
+			]
 		}
-	]
-	res.send(user);
-	
+	res.send(user);	
 })
 
 

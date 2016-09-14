@@ -1,7 +1,6 @@
-var yo=require('yo-yo');
-var footer = require('../footer') ;
-var translate=require('../translate');
-var layout = require ('../layout');
+var yo = require('yo-yo');
+var layout = require('../layout');
+var translate = require('../translate').message;
 
 module.exports = function (user) {
   var el = yo`<div class="container user-page">
@@ -21,7 +20,7 @@ module.exports = function (user) {
         ${user.pictures.map(function (picture) {
           return yo`<div class="col s12 m6 l4">
             <div class="picture-container">
-              <img src="${picture.src})" class="picture" />
+              <img src="${picture.src}" class="picture" />
               <div class="likes"><i class="fa fa-heart"></i> ${picture.likes}</div>
             </div>
           </div>`;
