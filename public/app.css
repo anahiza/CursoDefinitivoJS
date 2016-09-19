@@ -6618,10 +6618,10 @@ body {
   transform: translate(-50%, -50%);
   color: white;
   opacity: 0;
-  transition: all .1s ease; }
+  transition: all 1s ease; }
   .like-heart.liked {
     color: #f44336;
     display: block;
-    transition: all .5s ease;
+    transition: all 1s ease;
     font-size: 12em;
     opacity: 1; }
