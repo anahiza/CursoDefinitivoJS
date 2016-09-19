@@ -201,7 +201,7 @@ $avatar-size: 48px;
       align-items: center;
       color: $platzigram-red;
       font-size: 34px;
-      display: none
+      display: none;
     }
 
     .fa-heart {
@@ -209,10 +209,10 @@ $avatar-size: 48px;
       display: inline-block;
     }
   }
-
-
 }
-  .modal{
+
+
+.modal{
     .fa-heart{
       display: inline-block;
     }
@@ -220,5 +220,26 @@ $avatar-size: 48px;
     img{
       max-width: 90%;
       max-height: 90%;
+      top:50%;
+      left:50%;
     }
   }
+
+.like-heart{
+    font-size: 10em;
+    position: absolute; 
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    opacity: 0;
+    transition: all .1s ease;
+    
+    &.liked{
+      color:$platzigram-red;
+      display: block;
+      transition: all .5s ease;
+      font-size: 12em;
+      opacity: 1;
+    }
+}
