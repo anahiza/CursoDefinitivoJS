@@ -18,7 +18,7 @@ var storage = multerS3({
 	bucket: 'anhy-platzigram',
 	acl: 'public-read',
 	metadata: function(req, file, cb){
-		cb(null,{fieldName: file.fieldName})
+		cb(null,{fieldName: file.fieldname})
 	},
 	key: function(req,file,cb){
 		cb(null, +Date.now()+'.' + ext(file.originalname))
@@ -74,8 +74,9 @@ app.get('/api/pictures', function(req,res){
 })
 
 app.post('/api/pictures', function(req,res){
-    upload(req,res, function(err){
+    upload(req, res, function(err){
         if (err){
+        	console.log(err)
             return res.send(500, "Error uploading file");
         }
         res.send("File uploaded");
