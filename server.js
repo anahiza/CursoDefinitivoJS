@@ -1,33 +1,46 @@
 var express=require ('express');
-var app=express();
 var ext = require('file-extension');
 
-var multer  = require('multer');
+var multer=require('multer');
 var aws = require('aws-sdk');
 var multerS3 = require('multer-s3');
-
 var config = require('./config');
+var port = process.env.PORT || 3000;
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser')
+var expressSession = require('express-session')
+var passport = require('passport')
+
 
 var s3 = new aws.S3({
-	accessKeyId: config.aws.accessKey,
-	secretAccessKey: config.aws.secretKey
+  accessKey: config.aws.accessKey,
+  secretKey: config.aws.secretKey
 })
 
 var storage = multerS3({
-	s3: s3,
-	bucket: 'anhy-platzigram',
-	acl: 'public-read',
-	metadata: function(req, file, cb){
-		cb(null,{fieldName: file.fieldName})
-	},
-	key: function(req,file,cb){
-		cb(null, +Date.now()+'.' + ext(file.originalname))
-	}
+  s3: s3,
+  bucket: 'anhy-platzigram',
+  acl: 'public-read',
+  metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      cb(null, +Date.now()+'.'+ext(file.originalname))
+    }
 })
-
  
 var upload = multer({ storage: storage }).single('picture');
-
+var app=express();
+app.set(bodyParser.json());
+app.set(bodyParser.urencoded({ extended: fase}));
+app.use(cookieParser());
+app.use(expressSession({
+  secret: config.secret,
+  resave: false,
+  saveUnitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.set('view engine','pug');
 
@@ -69,16 +82,22 @@ app.get('/api/pictures', function(req,res){
 			createdAt: new Date().setDate(new Date().getDate()-10)
 			
 		}
+
 	];
 	setTimeout(()=>res.send(pictures),1000)
 })
 
 app.post('/api/pictures', function(req,res){
     upload(req,res, function(err){
-        if (err){
+        if (err){        
+        	console.log(s3);
+    		console.log(config);	
             return res.send(500, "Error uploading file");
+             
         }
-        res.send("File uploaded");
+        res.send('File uploaded');
+        console.log(s3);
+    	console.log(config);
         
     })
 })

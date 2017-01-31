@@ -33,7 +33,7 @@ module.exports=function(pictures){
         <a href="#modalCamara" class="waves-effect waves-light btn modal-trigger">
           <i class="fa fa-camera"></i>
         </a>
-        <div id = "fileName" class="fileUpload btn cyan">
+        <div id = "fileName" class="fileUpload btn btn-flat cyan">
           <span><i class="fa fa-cloud-upload" aria-hidden="true"></i>${translate.message('upload-picture')}</span>
           <input name="picture" id="file" type="file" class="upload" onchange=${onchange}/>
         </div>    
@@ -68,13 +68,14 @@ module.exports=function(pictures){
 
   function onsubmit(ev){
     ev.preventDefault();
-    var data=new FormData(this);
+    var data= new FormData(this);
     request
       .post('/api/pictures')
       .send(data)
       .end(function(err,res){
         console.log(arguments);
       })
+   
 
   }
 
