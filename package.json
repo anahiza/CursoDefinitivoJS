@@ -23,7 +23,8 @@
     "superagent": "^2.2.0",
     "title": "^1.0.0",
     "webcamjs": "^1.0.16",
-    "yo-yo": "^1.2.2"
+    "yo-yo": "^1.2.2",
+    "platzigram-client": "anahiza/platzigram-client"
   },
   "devDependencies": {
     "babel-plugin-syntax-async-functions": "^6.13.0",

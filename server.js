@@ -10,7 +10,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser')
 var expressSession = require('express-session')
 var passport = require('passport')
+var platzigram = require('platzigram-client')
 
+var client = platzigram.createClient(config.client);
 
 var s3 = new aws.S3({
   accessKey: config.aws.accessKey,
@@ -32,7 +34,7 @@ var storage = multerS3({
 var upload = multer({ storage: storage }).single('picture');
 var app=express();
 app.set(bodyParser.json());
-app.set(bodyParser.urencoded({ extended: fase}));
+app.set(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 app.use(expressSession({
   secret: config.secret,
@@ -53,6 +55,17 @@ app.get('/', function(req, res){
 
 app.get('/signup',function(req, res){
     res.render('index', {title: 'Platzigram - Sign Up'});
+})
+
+app.post('/signup', function(req, res){
+  var user = req.body;
+  client.saveUser(user, function(err, res){
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.redirect('/signin');
+  })
+
 })
 
 app.get('/signin',function(req, res){
@@ -88,17 +101,11 @@ app.get('/api/pictures', function(req,res){
 })
 
 app.post('/api/pictures', function(req,res){
-<<<<<<< HEAD
     upload(req,res, function(err){
         if (err){        
         	console.log(s3);
     		console.log(config);	
-=======
-    upload(req, res, function(err){
-        if (err){
-        	console.log(err)
->>>>>>> origin
-            return res.send(500, "Error uploading file");
+        return res.send(500, "Error uploading file");
              
         }
         res.send('File uploaded');
