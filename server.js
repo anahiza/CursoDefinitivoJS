@@ -88,10 +88,16 @@ app.get('/api/pictures', function(req,res){
 })
 
 app.post('/api/pictures', function(req,res){
+<<<<<<< HEAD
     upload(req,res, function(err){
         if (err){        
         	console.log(s3);
     		console.log(config);	
+=======
+    upload(req, res, function(err){
+        if (err){
+        	console.log(err)
+>>>>>>> origin
             return res.send(500, "Error uploading file");
              
         }
