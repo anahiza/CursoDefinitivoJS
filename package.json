@@ -19,12 +19,14 @@
     "multer-s3": "^2.5.0",
     "page": "^1.7.1",
     "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "platzigram-client": "anahiza/platzigram-client",
     "pug": "^2.0.0-beta4",
     "superagent": "^2.2.0",
     "title": "^1.0.0",
     "webcamjs": "^1.0.16",
-    "yo-yo": "^1.2.2",
-    "platzigram-client": "anahiza/platzigram-client"
+    "yo-yo": "^1.2.2"
   },
   "devDependencies": {
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -41,7 +43,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "gulp watch && node server.js"
+    "start": "gulp watch & node server.js"
   },
   "repository": {
     "type": "git",
